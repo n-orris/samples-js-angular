@@ -12,11 +12,11 @@ app.use('/custom-login', express.static(path.join(__dirname, '..', 'custom-login
 
 app.use('*', (req, res) => {
   if (req.originalUrl.startsWith('/okta-hosted-login')) {
-    res.sendFile(path.resolve(__dirname, '..', 'okta-hosted-login', 'dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '..', 'okta-hosted-login', 'dist', 'app.component.html'));
   } else if (req.originalUrl.startsWith('/custom-login')) {
-    res.sendFile(path.resolve(__dirname, '..', 'custom-login', 'dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '..', 'custom-login', 'dist', 'app.component.html'));
   } else if (req.originalUrl === '/') {
-    res.sendFile(path.resolve(__dirname, 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'app.component.html'));
   } else {
     res.status(404).send('Not Found');
   }

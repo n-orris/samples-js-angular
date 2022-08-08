@@ -24,8 +24,8 @@
     "build:okta-hosted-login": "cd ./okta-hosted-login && npm install --production=false && npm run build",
     "build:custom-login": "cd ./custom-login && npm install --production=false && npm run build",
     "build": "npm run build:okta-hosted-login && npm run build:custom-login",
-    "start": "node ./heroku/server.js",
-    "dev": "nodemon ./heroku/server.js"
+    "start": "node okta-hosted-login/src/app/server.js",
+    "dev": "nodemon okta-hosted-login/src/app/server.js"
   },
   "author": "",
   "license": "Apache-2.0",
